@@ -6,6 +6,25 @@
     <title>Cocktails App</title>
 </head>
 <body>
-    <h1>hi</h1>
+    <h1>Here is a random cocktail for you 🍸</h1>
+    <% if (locals.name) { %>
+        <div class="title">
+            <h2>
+            <%= name %>
+            </h2>
+        </div>
+        <img src=<%= picture %> alt="Cocktail picture">
+        <h3>Ingredients</h3>
+        <ul>
+            <% ingredients.forEach(function(item) { %>
+                <li><%= item.measure %> of <%= item.ingredient %>.</li>
+            <% }); %>
+        </ul>
+        <h3>Instructions</h3>
+        <p> <%= instructions %></p>
+        <p> Our recommendation - drink this cocktail in a <%= glass %>.</p>
+    <% } else { %>
+        <p>No data</p>
+    <% } %>
 </body>
 </html>
